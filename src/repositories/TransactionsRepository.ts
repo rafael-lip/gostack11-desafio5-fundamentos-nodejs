@@ -29,9 +29,11 @@ class TransactionsRepository {
         switch (transaction.type) {
           case 'income':
             accumulator.income += transaction.value;
+            accumulator.total += transaction.value;
             break;
           case 'outcome':
             accumulator.outcome += transaction.value;
+            accumulator.total -= transaction.value;
             break;
           default:
             break;
